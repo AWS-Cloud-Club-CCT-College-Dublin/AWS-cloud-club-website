@@ -173,7 +173,13 @@ body {
   padding: 1.5rem 1rem;
   margin-top: 2rem;
 }
-
+/* Chatbot */
+#lex-web-ui {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
 /* ========================
    Responsive Design Below
 =========================== */
