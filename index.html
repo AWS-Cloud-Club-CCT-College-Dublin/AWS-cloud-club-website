@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://daaqiwqwqmc45.cloudfront.net/lex-web-ui-loader.min.js"></script>
+<script>
+  var loaderOpts = {
+    baseUrl: 'https://daaqiwqwqmc45.cloudfront.net/',
+    shouldLoadMinDeps: true
+  };
+  var loader = new ChatBotUiLoader.IframeLoader(loaderOpts);
+  var chatbotUiConfig = {
+          /* Example of setting session attributes on parent page
+          lex: {
+            sessionAttributes: {
+              userAgent: navigator.userAgent,
+              QNAClientFilter: ''
+            }
+          }
+          */
+        };
+  loader.load(chatbotUiConfig)
+    .catch(function (error) { console.error(error); });
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AWS Cloud Club</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="#">
+        <img src="logo/cloud-clubs-logo.png" alt="Logo" class="logo-img" />
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+      ☰
+    </button>
+    <nav class="nav-links" id="navMenu">
+      <a href="#">Events</a>
+      <a href="#">Education</a>
+      <a href="#">Gallery</a>
+      <a href="#">About us</a>
+      <a href="#">Join us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Welcome to AWS Cloud Clubs Dublin</h1>
+    <p>
+      AWS Cloud Clubs Dublin, supported by CCT College, is a dynamic community where cloud enthusiasts, students, and professionals come together to deepen their knowledge of AWS technologies. Through hands-on workshops, expert talks, and collaborative projects, members accelerate their cloud skills and foster innovation in a supportive learning environment.
+    </p>
+    <a href="https://www.meetup.com/aws-cloud-club-at-cct-college-dublin/" class="btn-primary" target="_blank" rel="noopener noreferrer">Become a member now</a>
+  </div>
+</section>
+
+  <section class="features">
+    <div class="container grid">
+      <div class="card">
+        <h3>Compute</h3>
+        <p>Scale your applications with powerful compute services.</p>
+        <a href="#">Learn More →</a>
+      </div>
+      <div class="card">
+        <h3>Storage</h3>
+        <p>Secure, durable, and scalable object storage infrastructure.</p>
+        <a href="#">Learn More →</a>
+      </div>
+      <div class="card">
+        <h3>Machine Learning</h3>
+        <p>Build, train, and deploy machine learning models easily.</p>
+        <a href="#">Learn More →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 AWS Styled Page — Not affiliated with Amazon</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

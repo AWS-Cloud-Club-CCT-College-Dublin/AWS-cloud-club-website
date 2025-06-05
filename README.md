@@ -1,2 +1,1 @@
-# AWS-cloud-club-website
- Official website for the AWS Cloud Club Dublin
+# aws_cct_website
