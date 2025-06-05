@@ -14,15 +14,16 @@ window.addEventListener('DOMContentLoaded', function() {
     shouldLoadMinDeps: true,
     container: document.getElementById('chatbot-frame'),
     iframeAttributes: {
-      width: '100%',
-      height: '100%',
-      style: 'border:none; border-radius: 0 0 8px 8px;'
+      width: '60%',          // updated width
+      height: '80%',         // updated height
+      style: 'border:none; border-radius: 0 0 8px 8px; display: block; margin: auto; background-color:rgb(35, 6, 68);'
+      // added background-color purple, margin:auto to center iframe inside container
     }
   };
   var loader = new ChatBotUiLoader.IframeLoader(loaderOpts);
 
   var chatbotUiConfig = {
-    // Add your sessionAttributes or other config here if needed
+    // your config here
   };
 
   loader.load(chatbotUiConfig).catch(function(error) {

@@ -175,53 +175,7 @@ body {
 }
 /* Chatbot */
 /* Chatbot container */
-#chatbot-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 320px;
-  height: 450px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-  overflow: hidden;
-  font-family: Arial, sans-serif;
-  z-index: 9999;
-  background: #6a0dad;
-  display: flex;
-  flex-direction: column;
-}
 
-/* Chatbot header */
-#chatbot-header {
-  background-color: #5a0cae;
-  color: white;
-  padding: 10px 15px;
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  font-size: 18px;
-  flex-shrink: 0;
-}
-
-#chatbot-header img {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-}
-
-/* Chatbot iframe container */
-#chatbot-frame {
-  flex-grow: 1;
-  background: white; /* typical background for chatbot UI */
-}
-
-#chatbot-frame iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 0 0 8px 8px;
-  display: block;
-}
 
 /* ========================
    Responsive Design Below
