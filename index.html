@@ -1,26 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://d2252vz4w8mz3n.cloudfront.net/lex-web-ui-loader.min.js"></script>
-  <script>
-    var loaderOpts = {
-      baseUrl: 'https://d2252vz4w8mz3n.cloudfront.net/',
-      shouldLoadMinDeps: true
-    };
-    var loader = new ChatBotUiLoader.IframeLoader(loaderOpts);
-    var chatbotUiConfig = {
-            /* Example of setting session attributes on parent page
-            lex: {
-              sessionAttributes: {
-                userAgent: navigator.userAgent,
-                QNAClientFilter: ''
-              }
-            }
-            */
-          };
-    loader.load(chatbotUiConfig)
-      .catch(function (error) { console.error(error); });
-  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AWS Cloud Club</title>
@@ -83,6 +63,17 @@
   </div>
 </footer>
 
+<!-- Chatbot container -->
+<div id="chatbot-container">
+  <div id="chatbot-header">
+    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Chatbot Icon" />
+    Clubby
+  </div>
+  <div id="chatbot-frame"></div>
+</div>
+
+<script src="https://d2252vz4w8mz3n.cloudfront.net/lex-web-ui-loader.min.js"></script>
+<script src="chatbot-loader.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
