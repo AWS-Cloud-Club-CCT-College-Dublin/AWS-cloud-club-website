@@ -14,9 +14,7 @@ window.addEventListener('DOMContentLoaded', function() {
     shouldLoadMinDeps: true,
     container: document.getElementById('chatbot-frame'),
     iframeAttributes: {
-      width: '50px',          // updated width
-      height: '50px',         // updated height
-      style: 'border:none; border-radius: 0 0 8px 8px; display: block; margin: auto; background-color:rgb(35, 6, 68);'
+
       // added background-color purple, margin:auto to center iframe inside container
     }
   };

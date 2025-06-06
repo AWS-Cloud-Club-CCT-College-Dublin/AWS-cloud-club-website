@@ -175,12 +175,12 @@ body {
 }
 /* Chatbot */
 /* Chatbot container */
-.lex-web-ui-iframe {
+/* .lex-web-ui-iframe {
     min-width: 25vw !important;
     max-height: 315px !important;
     margin-right: 10vw !important;
     margin-bottom: 10px !important;
-}
+} */
 
 /* ========================
    Responsive Design Below
