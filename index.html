@@ -5,61 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AWS Cloud Club</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/27fe0181dd.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <header class="navbar">
-  <div class="container">
+  <div class="container top-icons">
+    <div class="social-icons">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+  <div class="container nav-main">
     <div class="logo">
       <a href="#">
         <img src="logo/cloud-clubs-logo.png" alt="Logo" class="logo-img" />
       </a>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-      ☰
-    </button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">☰</button>
     <nav class="nav-links" id="navMenu">
-      <a href="#">Events</a>
-      <a href="#">Education</a>
-      <a href="#">Gallery</a>
-      <a href="#">About us</a>
-      <a href="#">Join us</a>
+      <a href="#events">Events</a>
+      <a href="#education">Education</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About us</a>
+      <a href="#join">Join us</a>
     </nav>
   </div>
 </header>
 
-<section class="hero">
+<!-- Example Hero Section -->
+<section class="hero" id="home">
   <div class="container">
     <h1>Welcome to AWS Cloud Clubs Dublin</h1>
-    <p>
-      AWS Cloud Clubs Dublin, supported by CCT College, is a dynamic community where cloud enthusiasts, students, and professionals come together to deepen their knowledge of AWS technologies. Through hands-on workshops, expert talks, and collaborative projects, members accelerate their cloud skills and foster innovation in a supportive learning environment.
-    </p>
+    <p>A dynamic community of AWS learners, supported by CCT College.</p>
     <a href="https://www.meetup.com/aws-cloud-club-at-cct-college-dublin/" class="btn-primary" target="_blank" rel="noopener noreferrer">Become a member now</a>
   </div>
 </section>
 
-<section class="features">
-  <div class="container grid">
-    <div class="card">
-      <h3>Compute</h3>
-      <p>Scale your applications with powerful compute services.</p>
-      <a href="#">Learn More →</a>
-    </div>
-    <div class="card">
-      <h3>Storage</h3>
-      <p>Secure, durable, and scalable object storage infrastructure.</p>
-      <a href="#">Learn More →</a>
-    </div>
-    <div class="card">
-      <h3>Machine Learning</h3>
-      <p>Build, train, and deploy machine learning models easily.</p>
-      <a href="#">Learn More →</a>
-    </div>
+<section id="events" class="spacer-section">
+  <div class="container">
+    <h2>Events</h2>
+    <p>Details about upcoming and past AWS Cloud Club events.</p>
   </div>
 </section>
 
+<section id="education" class="spacer-section">
+  <div class="container">
+    <h2>Education</h2>
+    <p>Resources and workshops for learning AWS and cloud computing.</p>
+  </div>
+</section>
+
+<section id="gallery" class="spacer-section">
+  <div class="container">
+    <h2>Gallery</h2>
+    <p>Images and highlights from our club activities and meetups.</p>
+  </div>
+</section>
+
+<section id="about" class="spacer-section">
+  <div class="container">
+    <h2>About Us</h2>
+    <p>Learn more about AWS Cloud Clubs Dublin and our mission.</p>
+  </div>
+</section>
+
+<section id="join" class="spacer-section">
+  <div class="container">
+    <h2>Join Us</h2>
+    <p>Ready to build your cloud skills? Become a member today.</p>
+  </div>
+</section>
+
+
+<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <p>© 2025 AWS Styled Page — Not affiliated with Amazon</p>
+    <div class="social-icons">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
   </div>
 </footer>
 

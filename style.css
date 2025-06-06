@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Segoe UI", sans-serif;
   line-height: 1.6;
@@ -14,9 +18,7 @@ body {
 
 /* Container */
 .container {
-  /* max-width: 1200px; */
-  /* margin: 0 auto; */
-  padding: 1.5rem;
+  padding: 0.3rem;
 }
 
 /* Navbar */
@@ -31,12 +33,40 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.navbar .container {
+/* Social icons row at top of header */
+.top-icons {
+  justify-content: flex-end;
+  padding-bottom: 0; /* reduce from 0.5rem */
+  display: flex;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  padding-right: 20px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ff9900;
+}
+
+/* HUD-style nav background */
+.nav-main {
+  background-color: rgba(20, 31, 46, 0.75); /* translucent HUD background */
+  border-radius: 12px;
+  padding: 0.5rem;
+  padding-right: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
-  position: relative;
 }
 
 .logo {
@@ -45,7 +75,7 @@ body {
 }
 
 .logo-img {
-  height: 80px;
+  height: 60px;
   width: auto;
 }
 
@@ -59,10 +89,14 @@ body {
   color: white;
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s ease;
+  margin-right: 0.3rem; /* reduces space between icon and text */
 }
 
-.nav-links a:hover {
-  text-decoration: underline;
+.nav-links a:hover,
+.nav-links a:focus {
+  color: #3399ff; /* blue */
+  outline: none;
 }
 
 /* Hamburger Button */
@@ -78,9 +112,9 @@ body {
 
 /* Hero Section */
 .hero {
-  margin-top: 100px;
+  margin-top: 110px;
   padding: 2rem 1rem;
-  background-image: url('logo/background.png');
+  background-image: url('logo/background2.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -165,6 +199,24 @@ body {
   text-decoration: underline;
 }
 
+.spacer-section {
+  scroll-margin-top: 150px; /* space to avoid header cover */
+  padding: 4rem 1rem;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
+
+.spacer-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.spacer-section p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+
 /* Footer */
 .footer {
   background-color: #232f3e;
@@ -173,23 +225,23 @@ body {
   padding: 1.5rem 1rem;
   margin-top: 2rem;
 }
-/* Chatbot */
-/* Chatbot container */
-/* .lex-web-ui-iframe {
-    min-width: 25vw !important;
-    max-height: 315px !important;
-    margin-right: 10vw !important;
-    margin-bottom: 10px !important;
-} */
+
+.footer .social-icons {
+  justify-content: center;
+  margin-top: 1rem;
+}
 
 /* ========================
    Responsive Design Below
 =========================== */
 @media (max-width: 768px) {
-  .navbar .container {
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
+  .top-icons {
+    justify-content: center;
+  }
+
+  .nav-main {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .hamburger {
@@ -207,7 +259,6 @@ body {
     gap: 1rem;
     display: none;
     width: 200px;
-    /* border-radius: 8px; */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
