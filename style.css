@@ -112,6 +112,7 @@ body {
 
 /* Hero Section */
 .hero {
+  background-image: url('logo/background2.png');
   height: 100vh; /* full viewport height */
   width: 100%;
   background-size: cover;
