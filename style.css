@@ -43,7 +43,6 @@ body {
 .social-icons {
   display: flex;
   gap: 1rem;
-  padding-right: 20px;
 }
 
 .social-icons a {
@@ -301,7 +300,7 @@ body {
 
 /* Footer */
 .footer {
-  background-color: #232f3e;
+  background-color: #141f2e;
   color: white;
   text-align: center;
   padding: 1.5rem 1rem;
@@ -321,9 +320,8 @@ body {
     justify-content: center;
   }
 
-  .nav-main {
-    flex-direction: column;
-    align-items: flex-start;
+.nav-main {
+    position: relative;
   }
 
   .hamburger {
@@ -334,7 +332,7 @@ body {
     position: absolute;
     top: 100%;
     right: 1rem;
-    background-color: #232f3e;
+    background-color: #141f2e;
     flex-direction: column;
     align-items: flex-start;
     padding: 1rem;
@@ -346,6 +344,9 @@ body {
 
   .nav-links.show {
     display: flex;
+  }
+  .hero-collage{
+  display: none; /* Hide collage on small screens */
   }
 
   .hero {
