@@ -1,30 +1,38 @@
-// script.js
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('navMenu');
+  const navLinks = navMenu.querySelectorAll('a');
 
+  // Toggle nav menu when hamburger clicked
   hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('show');
   });
-});
 
-window.addEventListener('DOMContentLoaded', function() {
-  var loaderOpts = {
+  // Close nav menu when any link clicked
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navMenu.classList.contains('show')) {
+        navMenu.classList.remove('show');
+      }
+    });
+  });
+
+  // Chatbot loader (unchanged)
+  const loaderOpts = {
     baseUrl: 'https://d2252vz4w8mz3n.cloudfront.net/',
     shouldLoadMinDeps: true,
     container: document.getElementById('chatbot-frame'),
     iframeAttributes: {
-
-      // added background-color purple, margin:auto to center iframe inside container
+      // Add your iframe styles or attributes here if needed
     }
   };
-  var loader = new ChatBotUiLoader.IframeLoader(loaderOpts);
+  const loader = new ChatBotUiLoader.IframeLoader(loaderOpts);
 
-  var chatbotUiConfig = {
-    // your config here
+  const chatbotUiConfig = {
+    // your chatbot config here
   };
 
-  loader.load(chatbotUiConfig).catch(function(error) {
+  loader.load(chatbotUiConfig).catch(error => {
     console.error('Chatbot loading error:', error);
   });
 });
