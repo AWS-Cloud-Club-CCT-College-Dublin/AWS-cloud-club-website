@@ -247,23 +247,28 @@ body {
   .hamburger {
     display: block;
   }
-
-  .nav-links {
+.nav-links {
     position: absolute;
     top: 100%;
     right: 1rem;
     background-color: #141f2e;
     flex-direction: column;
     align-items: flex-start;
-    padding: 1rem;
+
+    /* Make padding 0 when hidden */
+    padding: 0 1rem;
     gap: 1rem;
-    display: none;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
     width: 200px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
   .nav-links.show {
-    display: flex;
+    max-height: 500px; /* enough height for menu */
+    padding: 1rem;      /* restore padding */
   }
   .hero-collage{
   display: none; /* Hide collage on small screens */
