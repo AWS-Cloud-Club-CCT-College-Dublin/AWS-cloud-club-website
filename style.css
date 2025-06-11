@@ -324,6 +324,57 @@ body {
   text-decoration: none; /* Keep no underline on hover/focus */
 }
 
+/* CONTACT SECTION */
+.contact-section {
+  background-color: #fff;
+  padding: 40px 20px;
+  color: #fff;
+}
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  border-radius: 12px;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.form-section {
+  flex: 1;
+  padding: 40px;
+  color: #000;
+}
+.form-section h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+.map-section {
+  flex: 1;
+  min-height: 500px;
+}
+.form-section input,
+.form-section textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+.send-button {
+  background: #ff9900;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+}
+
 /* ========================
    Responsive Design Below
 =========================== */
@@ -477,5 +528,18 @@ body {
 
   .dev-credit {
     margin-top: 0.5rem; /* reduce space above the dev credit */
+  }
+  
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .form-section,
+  .map-section {
+    padding: 20px;
+  }
+
+  .map-section {
+    height: 300px;
   }
 }

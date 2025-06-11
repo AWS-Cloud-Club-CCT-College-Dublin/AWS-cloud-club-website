@@ -22,7 +22,7 @@
       <a href="#education">Education</a>
       <a href="#gallery">Gallery</a>
       <a href="#about">About us</a>
-      <a href="#join">Join us</a>
+      <a href="#contact">Contact us</a>
     </nav>
 
     <button class="hamburger" id="hamburger" aria-label="Toggle navigation">☰</button>
@@ -55,9 +55,6 @@
       </div>
   </div>
 </section>
-
-
-
 <section id="events" class="spacer-section">
   <div class="container">
     <h2>Events</h2>
@@ -86,10 +83,34 @@
   </div>
 </section>
 
-<section id="join" class="spacer-section">
-  <div class="container">
-    <h2>Join Us</h2>
-    <p>Ready to build your cloud skills? Become a member today.</p>
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    <div class="form-section">
+      <h2>Contact Us</h2>
+      <p>Fill out the form below and we'll get back to you soon.</p>
+      <form>
+        <label for="name">Name*</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+        <label for="email">Email*</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+        <label for="phone">Phone number*</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="4" placeholder="Enter your description"></textarea>
+
+        <button type="submit" class="send-button">Send Message</button>
+      </form>
+    </div>
+
+    <div class="map-section">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.476170883797!2d-6.263287684342037!3d53.34572687997917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e9b6c70a8e7%3A0x4fcbf5f28dbbc0f!2s30-34%20Westmoreland%20St%2C%20Dublin%202%2C%20D02%20HK35%2C%20Ireland!5e0!3m2!1sen!2sie!4v1718123456789"
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
   </div>
 </section>
 
@@ -121,7 +142,6 @@
     </div>
   </div>
 </footer>
-
 <script src="https://d2252vz4w8mz3n.cloudfront.net/lex-web-ui-loader.min.js"></script>
 <script src="script.js"></script>
 </body>
