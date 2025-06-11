@@ -42,6 +42,7 @@ body {
 }
 
 /* Social icons (shared footer + nav) */
+/* Footer and other general social icons keep original class */
 .social-icons {
   display: flex;
   gap: 1rem;
@@ -114,8 +115,21 @@ body {
 }
 
 /* Social icons inside nav-main (right aligned) */
-.nav-main .social-icons {
+.nav-main .social-icons-top.right-icons {
   margin-left: auto;
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons-top.right-icons a {
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons-top.right-icons a:hover {
+  color: #ff9900;
 }
 
 /* Hero Section */
@@ -143,7 +157,6 @@ body {
   padding-top: 100px;
 }
 
-
 /* Hero inner layout */
 .hero .container {
   width: 100%;
@@ -156,7 +169,6 @@ body {
   max-width: 500px;
   margin: 0 auto; /* Center it horizontally */
 }
-
 
 /* Button styling */
 .btn-primary {
@@ -271,9 +283,38 @@ body {
   margin-top: 2rem;
 }
 
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
 .footer .social-icons {
   justify-content: center;
   margin-top: 1rem;
+}
+
+.footer-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem; /* Optional spacing */
+}
+.footer-logo {
+  width: 60px; /* adjust size as needed */
+  height: auto;
+}
+.dev-credit a {
+  color: #ff9900;
+  text-decoration: none; /* This removes the underline */
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+.dev-credit a:hover,
+.dev-credit a:focus {
+  color: #ffa733;
+  outline: none;
+  text-decoration: none; /* Keep no underline on hover/focus */
 }
 
 /* ========================
@@ -285,21 +326,29 @@ body {
     align-items: center;
     position: relative;
   }
+  .logo {
+    order: 1;
+    margin-right: auto; /* ensures it's pushed to the left */
+  }
 
-  .social-icons {
+  .logo-img {
+    height: 40px; /* or your preferred size */
+  }
+  
+  /* Center the nav social icons */
+  .social-icons-top.right-icons {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-  }
-
-  .hero {
-    background-position: right center; /* shift background image to right */
+    order: 2; /* ensure order doesn’t break layout */
+    display: flex;
+    gap: 1rem;
   }
 
   .hamburger {
     display: block;
-    order: 2; /* place hamburger after logo and nav */
-    margin-left: auto; /* push hamburger to the right */
+    order: 3; /* after logo and social icons */
+    margin-left: auto; /* push hamburger right */
   }
 
   .nav-links {
@@ -319,17 +368,19 @@ body {
   }
 
   .nav-links.show {
-    max-height: 500px; /* allow menu to expand */
+    max-height: 500px;
     padding: 1rem;
-  }
-
-  /* Make sure logo stays visible */
-  .logo {
-    
   }
 
   /* Hero Section tweaks */
   .hero {
+    background: url('logo/background2.png') no-repeat right center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* full height of viewport */
+    background-position: right;
+    background-size: cover; /* ensure full coverage */
+    backdrop-filter: blur(4px);
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -350,10 +401,72 @@ body {
   }
 
   .btn-primary {
-    margin-top: 2rem;
+    animation: shake 0.6s infinite alternate;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
   }
 
   .hero-logos {
-    display: none; /* Hide logos on small screens as requested */
+    display: none;
+  }
+
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-5px); }
+    40% { transform: translateX(5px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+  }
+
+  .footer {
+    padding: 1rem 1rem 1.5rem; /* more bottom padding */
+    min-height: 180px; /* a bit taller */
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+   .footer-logo-wrapper {
+    order: 0; /* logo first */
+    /* margin-bottom: 1rem; */
+  }
+    .footer .social-icons {
+    order: 1; /* social icons come right after logo */
+    justify-content: center;
+    margin-top: 0; /* remove extra top margin */
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .social-icons {
+    order: 2;
+    width: 100%;
+
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .footer p,
+  .footer p.dev-credit {
+    font-size: 0.8rem;
+    margin: 0.2rem 0;
+    text-align: center;
+  }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dev-credit {
+    margin-top: 0.5rem; /* reduce space above the dev credit */
   }
 }
