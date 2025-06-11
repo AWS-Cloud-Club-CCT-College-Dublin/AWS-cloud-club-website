@@ -33,13 +33,15 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Social icons row at top of header */
+/* Top icons */
 .top-icons {
   justify-content: flex-end;
-  padding-bottom: 0; /* reduce from 0.5rem */
+  padding-right: 20px;
+  padding-bottom: 0;
   display: flex;
 }
 
+/* Social icons (shared footer + nav) */
 .social-icons {
   display: flex;
   gap: 1rem;
@@ -56,16 +58,16 @@ body {
   color: #ff9900;
 }
 
-/* HUD-style nav background */
+/* Nav bar main layout */
 .nav-main {
-  background-color: rgba(20, 31, 46, 0.75); /* translucent HUD background */
+  background-color: rgba(20, 31, 46, 0.75);
   border-radius: 12px;
-  padding: 0.5rem;
-  padding-right: 20px;
+  padding: 0.5rem 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
+  gap: 1rem;
 }
 
 .logo {
@@ -82,7 +84,9 @@ body {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  flex: 1;
+  justify-content: center;
 }
 
 .nav-links a {
@@ -90,16 +94,15 @@ body {
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
-  margin-right: 0.3rem; /* reduces space between icon and text */
+  margin-right: 0.3rem;
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
-  color: #3399ff; /* blue */
+  color: #3399ff;
   outline: none;
 }
 
-/* Hamburger Button */
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -110,10 +113,15 @@ body {
   z-index: 1001;
 }
 
+/* Social icons inside nav-main (right aligned) */
+.nav-main .social-icons {
+  margin-left: auto;
+}
+
 /* Hero Section */
 .hero {
-  background-image: url('logo/background2.png');
-  height: 100vh; /* full viewport height */
+  background-image: url('logo/bg2.png');
+  height: 70vh;
   width: 100%;
   background-size: cover;
   background-position: center;
@@ -122,33 +130,35 @@ body {
   justify-content: center;
   color: white;
   position: relative;
-  padding: 0 1rem; /* optional side padding */
+  padding: 0 1rem;
 }
 
 .hero-flex {
   display: flex;
   align-items: center;
-  justify-content: center; /* center both hero-text and collage */
-  max-width: 1000px;
+  justify-content: center; /* Center content horizontally */
+  text-align: center;
+  flex-wrap: wrap;         /* Wrap on small screens */
+  gap: 10rem;
   padding-top: 100px;
-  color: white;
-  gap: 2rem; /* space between text and images */
 }
 
-/* Ensure the container inside hero fills width */
+
+/* Hero inner layout */
 .hero .container {
   width: 100%;
-  max-width: none; /* override any max-width */
+  max-width: none;
   padding: 0;
 }
 
 .hero-text {
-  flex: 1;
-  max-width: 500px; /* limit max width */
-  padding-right: 1rem; /* less padding */
-  text-align: center; /* center text */
+  flex: 0 1 auto;
+  max-width: 500px;
+  margin: 0 auto; /* Center it horizontally */
 }
 
+
+/* Button styling */
 .btn-primary {
   background-color: #ff9900;
   color: white;
@@ -156,9 +166,42 @@ body {
   text-decoration: none;
   border-radius: 20px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   display: inline-block;
   margin-top: 2rem;
+}
+
+/* Hover effect for button */
+.btn-primary:hover {
+  background-color: #e88a00;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 153, 0, 0.5);
+}
+
+/* Partner logos in hero section */
+.hero-logos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  flex: 0 0 auto;
+}
+
+.partner-logo.aws-logo {
+  filter: brightness(0) invert(1);
+}
+
+.partner-logo {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+}
+
+/* Smooth hover effect for logos */
+.partner-logo:hover {
+  transform: scale(1.10);
+  /* box-shadow: 0 0 18px rgba(255, 255, 255, 0.9); */
 }
 
 /* Features Section */
@@ -203,7 +246,7 @@ body {
 }
 
 .spacer-section {
-  scroll-margin-top: 150px; /* space to avoid header cover */
+  scroll-margin-top: 150px;
   padding: 4rem 1rem;
   background-color: #f9f9f9;
   border-top: 1px solid #ddd;
@@ -237,29 +280,37 @@ body {
    Responsive Design Below
 =========================== */
 @media (max-width: 768px) {
-  .top-icons {
-    justify-content: center;
+  .nav-main {
+    display: flex;
+    align-items: center;
+    position: relative;
   }
 
-.nav-main {
-    position: relative;
+  .social-icons {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .hero {
+    background-position: right center; /* shift background image to right */
   }
 
   .hamburger {
     display: block;
+    order: 2; /* place hamburger after logo and nav */
+    margin-left: auto; /* push hamburger to the right */
   }
-.nav-links {
+
+  .nav-links {
     position: absolute;
     top: 100%;
     right: 1rem;
     background-color: #141f2e;
     flex-direction: column;
     align-items: flex-start;
-
-    /* Make padding 0 when hidden */
     padding: 0 1rem;
     gap: 1rem;
-
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease, padding 0.4s ease;
@@ -268,21 +319,26 @@ body {
   }
 
   .nav-links.show {
-    max-height: 500px; /* enough height for menu */
-    padding: 1rem;      /* restore padding */
-  }
-  .hero-collage{
-  display: none; /* Hide collage on small screens */
+    max-height: 500px; /* allow menu to expand */
+    padding: 1rem;
   }
 
+  /* Make sure logo stays visible */
+  .logo {
+    
+  }
+
+  /* Hero Section tweaks */
   .hero {
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 1rem;
   }
 
   .hero .container {
     align-items: center;
+    flex-direction: column;
   }
 
   .hero h1 {
@@ -295,5 +351,9 @@ body {
 
   .btn-primary {
     margin-top: 2rem;
+  }
+
+  .hero-logos {
+    display: none; /* Hide logos on small screens as requested */
   }
 }
