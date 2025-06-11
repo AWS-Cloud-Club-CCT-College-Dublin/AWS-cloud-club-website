@@ -163,6 +163,13 @@ body {
   max-width: none;
   padding: 0;
 }
+.hero-text h1 {
+  font-size: 3rem; /* adjust size as needed */
+  font-weight: 700; /* optional, make it bolder */
+  line-height: 1.2; /* better spacing */
+  color: white; /* ensure good contrast on hero */
+  padding-bottom: 20px;
+}
 
 .hero-text {
   flex: 0 1 auto;
@@ -391,9 +398,11 @@ body {
     align-items: center;
     flex-direction: column;
   }
-
+  .hero-flex {
+    padding-top: 20px;
+  }
   .hero h1 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .hero p {
