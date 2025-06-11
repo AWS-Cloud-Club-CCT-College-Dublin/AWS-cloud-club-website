@@ -540,6 +540,6 @@ body {
   }
 
   .map-section {
-    height: 300px;
+    display: none;
   }
 }
