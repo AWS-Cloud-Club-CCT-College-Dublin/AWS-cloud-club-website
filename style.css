@@ -355,7 +355,6 @@ body {
 
 .event-card:hover {
   background-color: #f0f0f0;
-  /* transform: scale(1.03); */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 .shadow-module {
@@ -444,11 +443,6 @@ body {
 }
 
 
-
-
-
-
-
 /* Footer */
 .footer {
   background-color: #141f2e;
@@ -490,6 +484,148 @@ body {
   color: #ffa733;
   outline: none;
   text-decoration: none; /* Keep no underline on hover/focus */
+}
+
+/* Educated section */
+#education {
+  background-color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+#education h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+#education p {
+  font-size: 1.1rem;
+  color: #475569;
+  margin-bottom: 50px;
+}
+.certifications-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px; /* controls space between cards */
+}
+
+.cert-card {
+  width: 100%;         /* fill the parent */
+  min-height: 100%;    /* ensure full height if shadow-module grows */
+  display: flex;              /* make flex container */
+  flex-direction: column;     /* stack children vertically */
+  gap: 50px;                  /* vertical space between children */
+  background-color: #f9fafb;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  padding: 30px 20px;
+  max-width: 340px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+
+.cert-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* //////////////// */
+
+.shadow-module-cert {
+  position: relative;
+  display: inline-block;   /* or flex: 0 0 340px; */
+  width: 340px;
+  margin: 0;  /* optional, reset if needed */
+  flex-shrink: 0;  /* prevents shrinking if space is tight */
+}
+
+.shadow-module-cert::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;  /* match .cert-card */
+  background: linear-gradient(90deg, #b23a1f 0%, #d01dbd 100%);
+  border-radius: 10px;
+  z-index: 0; /* behind */
+  transition: filter 0.3s ease, opacity 0.3s ease;
+  filter: none;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.shadow-module-cert:hover::before {
+  filter: blur(10px);
+  opacity: 0.7;
+}
+
+/* Ensure event-card is on top */
+.shadow-module-cert > .cert-card {
+  position: relative;
+  z-index: 1;
+  background: white;
+  border-radius: 8px;
+  padding: 30px 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  flex-direction: column;
+  z-index: 1;
+}
+
+
+
+/* ////////// */
+
+.cert-badge {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.cert-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.cert-card p {
+  font-size: 0.95rem;
+  color: #334155;
+  margin-bottom: 20px;
+}
+
+.cert-link {
+  font-size: 0.95rem;
+  color: #0f172a;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s ease;
+  margin-top: auto;
+}
+
+.cert-link:hover {
+  color: #3b82f6;
+}
+
+
+/* HIIDEN SECTORS */
+
+#gallery,
+#about {
+  display: none !important;
 }
 
 /* CONTACT SECTION */
@@ -722,6 +858,44 @@ a
   margin: 0 auto;              /* Center the button */
 }
 
+  /* Responsive Certifications Section */
+  .certifications-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .shadow-module-cert {
+    width: 90%;
+    max-width: 340px;
+  }
+
+  .cert-card {
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 360px;
+  }
+
+  .cert-badge {
+    width: 80px;
+    margin-bottom: 16px;
+  }
+
+  .cert-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .cert-card p {
+    font-size: 0.9rem;
+    margin-bottom: auto;
+  }
+
+  .cert-link {
+    font-size: 0.9rem;
+    margin-top: auto;
+  }
 
 
 
